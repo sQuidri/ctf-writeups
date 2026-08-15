@@ -2,8 +2,8 @@
 # See https://docs.netlify.com/configure-builds/file-based-configuration/
 
 [build]
-  command = "npm ci && npx quartz build"
-  publish = "public"
+  command = "npm ci && chmod +x node_modules/.bin/quartz && npx quartz build"
+  publish = public
 
 [build.environment]
   NODE_VERSION = "22"
