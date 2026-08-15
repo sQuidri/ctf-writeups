@@ -12,7 +12,7 @@ Writeups for CTF challenges Ibrahim and I (along with people we've met along the
 content/
   SRCTF-2026/
     15th/          # Day 1
-      whats-up-doc  # "What's Up Doc?" - IDOR
+      whats-up-doc
     16th/          # Day 2
 ```
 

