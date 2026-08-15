@@ -16,7 +16,7 @@ description: An IDOR in the profile update endpoint lets you take over any docto
 
 ## Vulernability
 
-`POST /dashboard/profile` has an **IDOR (Insecure Direct Object Reference)**.
+`POST /dashboard/profile` has an **IDOR [(Insecure Direct Object Reference)](https://portswigger.net/web-security/access-control/idor)**.
 
 The profile update form looks up the user by the **`license` field you submit**, NOT by the session's `user_id`. So you can submit **anyone's** license number and change their `full_name` and `password`.
 
