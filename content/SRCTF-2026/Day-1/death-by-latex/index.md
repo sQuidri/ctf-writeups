@@ -1,9 +1,8 @@
 ---
-title: "Death by Glamour"
+title: '"Death by Latex"'
 date: 2026-08-15
 description: A LaTeX PDF generator lets you read arbitrary files by smuggling a path into the document via \lowercase and \lccode, leaking the flag from the server logs.
 ---
-# "Death by LaTeX"
 
 **Challenge:** https://ctf.urisc.club/challenges#Death%20by%20LaTeX-32
 
