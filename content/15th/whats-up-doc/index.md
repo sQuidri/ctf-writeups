@@ -1,12 +1,7 @@
 ---
 title: "What's Up Doc?"
 date: 2026-08-15
-tags:
-  - web
-  - idor
-  - auth
-  - aussiemed
-description: An IDOR in the profile update endpoint lets you take over any doctor account by submitting their license number.
+description: An IDOR in the profile update endpoint lets you take over any doctor account by submitting their license number & name.
 ---
 # "What's Up Doc?"
 
