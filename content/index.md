@@ -1,12 +1,6 @@
 ---
-title: CTF Writeups
+title: CTF's Played
 ---
-# CTF Writeups
 
-A collection of writeups for CTF challenges we have solved.
-
-## 15/08/2026 - SRCTF-2026/Day-1
-
-- [What's Up Doc?](/15th/whats-up-doc/) - IDOR that lets you take over any doctor account
-
-## 16/08/2026 - SRCTF-2026/Day-2
+## [SRCTF-2026 (15/08/2026 - 16/08/2026)]((/SRCTF-2026/))
+### A cozy beginner-level CTF hosted as part of a collaboration between three RMIT clubs, namely SWITCH, RISC & CSIT. Fun to socialise and compete in, with food and the like included and some great offered prizes!
