@@ -1,11 +1,6 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
-/**
- * Quartz 4 Configuration
- *
- * See https://quartz.jzhao.xyz/configuration for more information.
- */
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "CTF Writeups",
@@ -13,9 +8,12 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     locale: "en-US",
+    analytics: {
+      provider: "plausible"
+    },
     // TODO: update once the site is live on Netlify
     // (e.g. the default https://<site-name>.netlify.app or a custom domain)
-    baseUrl: "sQuidri.github.io/ctf-writeups",
+    baseUrl: "https://sigsegv.netlify.app",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
