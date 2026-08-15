@@ -1,9 +1,9 @@
 ---
-title: SRCTF 15th
+title: SRCTF
 ---
-# SRCTF - Day 1 15th
+# SRCTF - Day 1
 
-Writeups from SRCTF, held on the 15/08/26 & 16/08/26
+Writeups from Day 1 of SRCTF, held on 15/08/26
 
 ## Challenges
 
