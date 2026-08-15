@@ -1,6 +1,6 @@
 # CTF Writeups
 
-Writeups for CTF challenges I've solved, built with [Quartz](https://quartz.jzhao.xyz/) and hosted on GitHub Pages.
+Writeups for CTF challenges Ibrahim and I (along with people we've met along the way) have solved, built with [Quartz](https://quartz.jzhao.xyz/) and hosted on GitHub Pages.
 
 ## Site
 
@@ -10,16 +10,17 @@ Writeups for CTF challenges I've solved, built with [Quartz](https://quartz.jzha
 
 ```
 content/
-  15th/          # AussieMed CTF (15th)
-    whats-up-doc  # "What's Up Doc?" — IDOR
-  16th/          # next CTF
+  SRCTF-2026/
+    15th/          # Day 1
+      whats-up-doc  # "What's Up Doc?" - IDOR
+    16th/          # Day 2
 ```
 
 ## Adding a writeup
 
 1. Add a folder under `content/<ctf-name>/` and drop in an `index.md` with frontmatter (`title`, `date`, `tags`).
 2. Build locally to check it: `npx quartz build`
-3. Push to `main` — GitHub Actions builds and deploys automatically.
+3. Push to `main` - GitHub Actions builds and deploys automatically.
 
 ## Local dev
 
