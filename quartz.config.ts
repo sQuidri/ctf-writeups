@@ -13,6 +13,8 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     locale: "en-US",
+    // TODO: update once the site is live on Azure Static Web Apps
+    // (e.g. the default <app-name>.azurestaticapps.net or a custom domain)
     baseUrl: "sQuidri.github.io/ctf-writeups",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
