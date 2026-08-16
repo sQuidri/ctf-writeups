@@ -25,7 +25,7 @@ Two bugs chain together:
 
 Introspection (via admin session) exposes a GraphQL surface:
 
-- **Query:** `currentAdmin`, `systemStatus`, `auditLogSummary`, `maintenanceTasks` (list, summary only - no token), `maintenanceTask(id:)` (detail, includes `serviceToken` + `scopes`)
+- **Query:** `currentAdmin`, `systemStatus`, `auditLogSummary`, `maintenanceTasks` (list, summary only w/ no token), `maintenanceTask(id:)` (detail, includes `serviceToken` + `scopes`)
 - **Mutation:** `executeNetworkDiagnostic(serviceToken, host)` -> `DiagnosticResult{exitCode, stdout, stderr, ...}`
 
 There are two maintenance tasks:
