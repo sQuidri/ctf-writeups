@@ -30,7 +30,7 @@ The doctor's roster (`/dashboard/view-patients/`) only renders 8 patients:
 307 Erik Lawrence
 ```
 
-...but the `patient` endpoint happily serves all 312 patients in the practice (IDs `1`-`312`). Patient **4** isn't in your roster - and that's the "high value" one.
+...but the `patient` endpoint serves all 312 patients in the practice (IDs `1`-`312`). Patient **4** isn't in the roster which happens to be the "high value" one.
 
 ## Attack Path
 
