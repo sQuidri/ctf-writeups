@@ -12,7 +12,7 @@ description: An IDOR in the profile update endpoint lets you take over any docto
 
 ---
 
-## Vulernability
+## Vulnerability
 
 `POST /dashboard/profile` has an **IDOR [(Insecure Direct Object Reference)](https://portswigger.net/web-security/access-control/idor)**.
 
