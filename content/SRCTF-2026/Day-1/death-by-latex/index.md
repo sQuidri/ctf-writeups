@@ -1,5 +1,5 @@
 ---
-title: '"Death by Latex"'
+title: "Death by LaTeX"
 date: 2026-08-15
 description: A LaTeX PDF generator lets you read arbitrary files by smuggling a path into the document via \lowercase and \lccode, leaking the flag from the server logs.
 ---
@@ -97,7 +97,7 @@ To actually read the file, open it with `\openin` and loop over it with `\read`,
 `\DeclareUnicodeCharacter` makes sure the ASCII in said file renders proerly
 ### 3. Grab the flag
 
-The generated PDF contains `/var/log/latest.txt` in full — a memo titled **"POST INCIDENT REFORMS:"** from AussieMed. It describes letting go of the entire cybersecurity team and replacing them with an AI, and at the bottom of the letter there's the flag:
+The generated PDF contains `/var/log/latest.txt` in full - a memo titled **"POST INCIDENT REFORMS:"** from AussieMed. It describes letting go of the entire cybersecurity team and replacing them with an AI, and at the bottom of the letter there's the flag:
 
 ```
 SRCTF!{YoU_HavE_SoLvED_LaTeX_ChAlleNGE_WeLl_DOne_Xd}
