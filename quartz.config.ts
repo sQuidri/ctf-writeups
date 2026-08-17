@@ -3,7 +3,7 @@ import * as Plugin from "./quartz/plugins"
 
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "CTF Writeups",
+    pageTitle: "SIGSEGV",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -11,41 +11,39 @@ const config: QuartzConfig = {
     analytics: {
       provider: "plausible"
     },
-    // TODO: update once the site is live on Netlify
-    // (e.g. the default https://<site-name>.netlify.app or a custom domain)
-    baseUrl: "https://sigsegv.netlify.app",
+    baseUrl: "https://writeups.wis-ctf.duckdns.org",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
-        code: "IBM Plex Mono",
+        header: "Rubik",
+        body: "Rubik",
+        code: "Space Mono",
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          light: "#fff4f4",
+          lightgray: "#f1dada",
+          gray: "#b8a3a3",
+          darkgray: "#5c4a4a",
+          dark: "#191925",
+          secondary: "#b22222",
+          tertiary: "#6985b3",
+          highlight: "rgba(217, 144, 144, 0.16)",
+          textHighlight: "#edc3c788",
         },
         darkMode: {
-          light: "#161618",
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7b97aa",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#b3aa0288",
+          light: "#1a1416",
+          lightgray: "#3a2a2e",
+          gray: "#8a7074",
+          darkgray: "#e9d5d5",
+          dark: "#fff4f4",
+          secondary: "#f1b5b5",
+          tertiary: "#9ab4dd",
+          highlight: "rgba(241, 181, 181, 0.15)",
+          textHighlight: "#b2222288",
         },
       },
     },

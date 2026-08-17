@@ -1,4 +1,4 @@
-# CTF Writeups
+# SIGSEGV
 
 Writeups for CTF challenges Ibrahim and I (along with people we've met along the way) have solved, built with [Quartz](https://quartz.jzhao.xyz/) and hosted on GitHub Pages.
 

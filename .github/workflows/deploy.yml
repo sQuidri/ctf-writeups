@@ -1,0 +1,63 @@
+name: Deploy Writeups
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-writeups
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Quartz site
+        run: npm run quartz -- build
+
+      - name: Deploy to Oracle VM
+        env:
+          SSH_KEY: ${{ secrets.OCI_CTF_VM_KEY }}
+          VM_HOST: ${{ secrets.OCI_CTF_VM_HOST }}
+          VM_USER: ${{ secrets.OCI_CTF_VM_USER }}
+          KNOWN_HOSTS: ${{ secrets.OCI_CTF_VM_KNOWN_HOSTS }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          echo "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+          tar -C public -czf /tmp/ctf-writeups.tar.gz .
+
+          scp -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes \
+            /tmp/ctf-writeups.tar.gz \
+            "${VM_USER}@${VM_HOST}:/tmp/ctf-writeups.tar.gz"
+
+          ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes \
+            "${VM_USER}@${VM_HOST}" bash -s <<'REMOTE'
+          set -euo pipefail
+          sudo rm -rf /opt/ctf-writeups/public
+          sudo mkdir -p /opt/ctf-writeups/public
+          sudo tar -xzf /tmp/ctf-writeups.tar.gz -C /opt/ctf-writeups/public
+          sudo chown -R root:root /opt/ctf-writeups/public
+          sudo chcon -R -t httpd_sys_content_t /opt/ctf-writeups/public
+          sudo nginx -t
+          sudo systemctl reload nginx
+          rm -f /tmp/ctf-writeups.tar.gz
+          REMOTE

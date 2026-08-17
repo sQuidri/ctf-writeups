@@ -1,3 +1,102 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// CSIT Society-inspired custom styling
+
+// Glassmorphism panels for sidebar and header regions
+.sidebar.left,
+.sidebar.right {
+  border-radius: 1.25rem;
+  background: rgba(255, 244, 244, 0.5);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 16px 40px rgba(178, 34, 34, 0.06);
+}
+
+:root[saved-theme="dark"] {
+  .sidebar.left,
+  .sidebar.right {
+    background: rgba(26, 20, 22, 0.55);
+    border-color: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  }
+}
+
+// Firebrick-tinted scrollbar
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--secondary) 55%, transparent);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+// Refined code blocks
+pre {
+  border-radius: 0.9rem;
+  border: 1px solid var(--lightgray);
+  background: color-mix(in srgb, var(--light) 70%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(178, 34, 34, 0.06);
+}
+
+// Card-like section lists
+ul.section-ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1.5em;
+}
+
+li.section-li {
+  margin-bottom: 0;
+
+  & > .section {
+    padding: 1rem 1.2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--lightgray);
+    background: rgba(255, 255, 255, 0.4);
+    transition:
+      transform 0.35s cubic-bezier(0.075, 0.82, 0.165, 1),
+      box-shadow 0.35s ease,
+      border-color 0.35s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      border-color: var(--secondary);
+      box-shadow: 0 16px 36px rgba(178, 34, 34, 0.12);
+    }
+  }
+}
+
+:root[saved-theme="dark"] li.section-li > .section {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+// Soft hover for tags
+a.internal.tag-link {
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+
+  &:hover {
+    background: var(--secondary);
+    color: #fff;
+  }
+}
+
+// Navigation progress uses the red accent
+.navigation-progress {
+  background: var(--secondary);
+}
+
