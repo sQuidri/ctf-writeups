@@ -23,6 +23,9 @@ import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
 import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
+import SiteHeader from "./SiteHeader"
+import Visuals from "./Visuals"
+import Terminal from "./Terminal"
 
 export {
   ArticleTitle,
@@ -50,4 +53,7 @@ export {
   Comments,
   Flex,
   ConditionalRender,
+  SiteHeader,
+  Visuals,
+  Terminal,
 }

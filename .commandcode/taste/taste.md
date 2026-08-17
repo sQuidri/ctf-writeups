@@ -1,0 +1,13 @@
+- Prefers bash scripts for local deploy/sync automation (e.g., requested a `deploy.sh` to sync content to servers). Confidence: 0.8
+- Uses GitHub Actions for CI/CD, auto-deploying on commit+push to the main branch. Confidence: 0.8
+- Hosts infrastructure on Oracle Cloud (OCI) VMs with nginx + Let's Encrypt/certbot, using DuckDNS dynamic DNS for domains. Confidence: 0.7
+- Prefers memorable, topic-relevant naming (e.g., a `writeups` subdomain) and domain aliases over duplicate configurations. Confidence: 0.6
+- Develops on Windows with VSCode; bash scripts are expected to run under Git Bash. Confidence: 0.5
+- Values polished, modern web design with dynamic/animating elements (e.g., glassmorphism, particle networks, intro loaders) and likes matching a reference site's colors/styling. Confidence: 0.7
+- Open to changing frameworks/tooling when it better serves the goal; not wedded to the current stack (e.g., willing to drop Quartz). Confidence: 0.6
+- Prefers "hacker"/Kali Linux terminal aesthetics for terminal-like UI (dark navy/black background, cyan/blue accents, bash-style `user@host:~` prompts). Confidence: 0.6
+- Prefers minimal, non-redundant navigation/UI — e.g., avoids duplicate site-title headings when the top header already shows it. Confidence: 0.6
+- Prefers clean, non-overlapping UI layouts — e.g., finds a header that overlaps/cuts through the search bar annoying. Confidence: 0.6
+- Values consistent visual theming across assets — recolors/restyles icons and images to match the site palette rather than leaving them as-is. Confidence: 0.6
+- Reports visual/UI problems by attaching screenshots (@image.png) in chat rather than describing them textually, expecting the issue to be diagnosed from the image. Confidence: 0.8
+ rather than describing them textually, expecting the issue to be diagnosed from the image. Confidence: 0.7
