@@ -9,7 +9,7 @@ description: An API endpoint leaks more information than displayed.
 **Goal:** "AussieMed has launched a public status dashboard so clinics can monitor its production services. The page promises to show only the approved public summary, but the browser may receive more than it displays. Find the note that operations did not mean to publish. Visit: /service-status"
 
 **Flag:**
-- `SRCTF!{all_systems_operational_said_the_flaming_server}` - on the hidden patient's detail page
+- `SRCTF!{all_systems_operational_said_the_flaming_server}` - base64 encoded on the operator report
 
 ---
 
