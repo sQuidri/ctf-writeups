@@ -26,6 +26,7 @@ import ConditionalRender from "./ConditionalRender"
 import SiteHeader from "./SiteHeader"
 import Visuals from "./Visuals"
 import Terminal from "./Terminal"
+import BrandLoop from "./BrandLoop"
 
 export {
   ArticleTitle,
@@ -56,4 +57,5 @@ export {
   SiteHeader,
   Visuals,
   Terminal,
+  BrandLoop,
 }

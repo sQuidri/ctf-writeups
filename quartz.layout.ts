@@ -19,10 +19,6 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
-    Component.ConditionalRender({
-      component: Component.Terminal(),
-      condition: (page) => page.fileData.slug === "index",
-    }),
   ],
   left: [
     Component.MobileOnly(Component.Spacer()),
@@ -33,7 +29,6 @@ export const defaultContentPageLayout: PageLayout = {
           grow: true,
         },
         { Component: Component.Darkmode() },
-        { Component: Component.ReaderMode() },
       ],
     }),
     Component.Explorer({
@@ -43,6 +38,8 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
+    Component.DesktopOnly(Component.BrandLoop()),
+    Component.DesktopOnly(Component.Terminal()),
     Component.Backlinks(),
   ],
 }
@@ -66,5 +63,8 @@ export const defaultListPageLayout: PageLayout = {
       folderDefaultState: "open",
     }),
   ],
-  right: [],
+  right: [
+    Component.DesktopOnly(Component.BrandLoop()),
+    Component.DesktopOnly(Component.Terminal()),
+  ],
 }
