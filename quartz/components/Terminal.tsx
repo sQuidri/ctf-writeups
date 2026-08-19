@@ -17,53 +17,50 @@ const Terminal: QuartzComponent = ({ allFiles, displayClass }: QuartzComponentPr
     return `/${clean}/`
   }
 
+  const toName = (slug: FullSlug) => {
+    const s = simplifySlug(slug)
+    return s === "/" ? "home" : s.split("/").filter(Boolean).pop() ?? s
+  }
+
   return (
     <div class={classNames(displayClass, "terminal")}>
-      <div class="terminal-bar">
-        <span class="terminal-dot terminal-dot--red" />
-        <span class="terminal-dot terminal-dot--yellow" />
-        <span class="terminal-dot terminal-dot--green" />
-        <span class="terminal-bar-title">sigsegv@ctf: ~/writeups</span>
-      </div>
-      <div class="terminal-screen">
+      <div class="terminal-id">sigsegv@ctf:~/challenges</div>
+      <div class="terminal-output">
         <div class="terminal-line">
-          <span class="terminal-prompt">
-            <span class="terminal-prompt-user">sigsegv@ctf</span>
-            <span class="terminal-prompt-colon">:</span>
-            <span class="terminal-prompt-path">~</span>
-            <span class="terminal-prompt-dollar">$</span>
-          </span>
-          <span class="terminal-cmd">ls challenges/</span>
+          <span class="terminal-prompt">$</span>
+          <span class="terminal-cmd">ls</span>
         </div>
-        <ul class="terminal-list">
-          {challenges.map((c, i) => (
-            <li class="terminal-list-item">
-              <span class="terminal-list-index">[{i + 1}]</span>
-              <a href={toUrl(c.slug!)} data-challenge={i + 1}>
-                {c.frontmatter?.title}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <div class="terminal-line terminal-line--input">
-          <span class="terminal-prompt">
-            <span class="terminal-prompt-user">sigsegv@ctf</span>
-            <span class="terminal-prompt-colon">:</span>
-            <span class="terminal-prompt-path">~</span>
-            <span class="terminal-prompt-dollar">$</span>
-          </span>
-          <input
-            class="terminal-input"
-            type="text"
-            inputmode="numeric"
-            autocomplete="off"
-            spellcheck={false}
-            placeholder="type a number + enter"
-            aria-label="Select a challenge by number"
-          />
-        </div>
-        <div class="terminal-feedback" aria-live="polite" />
+        {challenges.map((c, i) => (
+          <div class="terminal-line terminal-line--out">
+            <span class="terminal-list-index">[{i + 1}]</span>
+            <a class="terminal-link" href={toUrl(c.slug!)}>
+              {toName(c.slug!)}/
+            </a>
+          </div>
+        ))}
       </div>
+      <div class="terminal-input-row">
+        <span class="terminal-prompt">$</span>
+        <input
+          class="terminal-input"
+          type="text"
+          autocomplete="off"
+          spellcheck={false}
+          placeholder="type a number, or try: ls, cd .."
+          aria-label="Terminal input"
+        />
+      </div>
+      <div class="terminal-hint">type a challenge number + enter to open it</div>
+      <ul class="terminal-list" hidden>
+        {challenges.map((c, i) => (
+          <li class="terminal-list-item">
+            <span class="terminal-list-index">[{i + 1}]</span>
+            <a href={toUrl(c.slug!)} data-challenge={i + 1} data-name={toName(c.slug!)}>
+              {c.frontmatter?.title}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

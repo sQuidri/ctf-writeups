@@ -22,43 +22,6 @@
   }
 }
 
-.visuals-intro {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  pointer-events: none;
-  animation: visuals-intro-away 0.9s cubic-bezier(0.68, 0.16, 0.01, 0.96) 1.4s forwards;
-
-  .visuals-intro-inner {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.12em;
-  }
-
-  .visuals-brand {
-    font-family: var(--codeFont);
-    font-size: clamp(2rem, 9vw, 6rem);
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    color: var(--secondary);
-    margin: 0;
-    line-height: 1;
-    text-shadow: 0 0 60px rgba(178, 34, 34, 0.25);
-  }
-
-  .visuals-cursor {
-    display: inline-block;
-    width: 0.5em;
-    height: 1em;
-    margin-left: 0.08em;
-    background: var(--tertiary);
-    animation: visuals-blink 1s steps(2, start) infinite;
-  }
-}
-
 @keyframes visuals-blink {
   0%,
   100% {
@@ -66,15 +29,6 @@
   }
   50% {
     opacity: 0;
-  }
-}
-
-@keyframes visuals-intro-away {
-  to {
-    opacity: 0;
-    filter: blur(14px);
-    transform: scale(1.06);
-    visibility: hidden;
   }
 }
 
