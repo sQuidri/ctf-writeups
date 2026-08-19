@@ -15,5 +15,5 @@ Shout-out to Prisha for telling me about this event!
 
 ## Days
 
-- [Day 1](SRCTF-2026/Day-1/) - Check-in + Basic Challenges, IDORs and a LaTeX filter bypass on the AussieMed practice management system.
-- [Day 2](SRCTF-2026/Day-2/) - IDOR, a base64 record ref, and an XXE that leaks the Flask session signing key from .env.
+- [Day 1](Day-1/) - Check-in + Basic Challenges, IDORs and a LaTeX filter bypass on the AussieMed practice management system.
+- [Day 2](Day-2/) - IDOR, a base64 record ref, and an XXE that leaks the Flask session signing key from .env.
