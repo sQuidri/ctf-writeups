@@ -1,5 +1,5 @@
 ---
-title: SIGSEGV CTF Archive
+title: SIGSEGV Archive
 ---
 
 > [!note] Navigation & Terminal
