@@ -18,9 +18,9 @@
   const mouse = { x: -9999, y: -9999 }
 
   const palette = {
-    primary: "#b22222",
-    pink: "#d99090",
-    blue: "#6985b3",
+    primary: "#38bdf8",
+    cyan: "#06b6d4",
+    blue: "#818cf8",
     text: getComputedStyle(document.documentElement).getPropertyValue("--dark").trim(),
   }
 
@@ -37,13 +37,14 @@
   function readPalette() {
     const cs = getComputedStyle(document.documentElement)
     palette.primary = cs.getPropertyValue("--secondary").trim() || palette.primary
+    palette.cyan = cs.getPropertyValue("--secondary").trim() || palette.cyan
     palette.blue = cs.getPropertyValue("--tertiary").trim() || palette.blue
     palette.text = cs.getPropertyValue("--dark").trim() || palette.text
   }
 
   function makeParticle(): Particle {
     const hue = Math.random()
-    const color = hue < 0.6 ? palette.pink : hue < 0.8 ? palette.blue : palette.primary
+    const color = hue < 0.5 ? palette.cyan : hue < 0.8 ? palette.blue : palette.primary
     return {
       x: Math.random() * width,
       y: Math.random() * height,
@@ -104,7 +105,7 @@
         const d = Math.hypot(dx, dy)
         if (d < linkDist) {
           const alpha = (1 - d / linkDist) * 0.16
-          ctx.strokeStyle = `rgba(178, 34, 34, ${alpha})`
+          ctx.strokeStyle = `rgba(56, 189, 248, ${alpha})`
           ctx.lineWidth = 1
           ctx.beginPath()
           ctx.moveTo(a.x, a.y)
@@ -133,7 +134,7 @@
     readPalette()
     for (const p of particles) {
       const hue = Math.random()
-      p.color = hue < 0.6 ? palette.pink : hue < 0.8 ? palette.blue : palette.primary
+      p.color = hue < 0.5 ? palette.cyan : hue < 0.8 ? palette.blue : palette.primary
     }
   }
 
@@ -181,5 +182,79 @@
     }
   }
 
+  const ALL_FEATURED_WRITEUPS = [
+    {
+      href: "/SRCTF-2026/Day-1/death-by-latex/",
+      event: "SRCTF 2026 · Day 1",
+      tag: "Filter Smuggling",
+      title: "Death by LaTeX",
+      desc: "\\lccode lowercase character smuggling to bypass source filters and exfiltrate server logs via compiled PDF.",
+    },
+    {
+      href: "/SRCTF-2026/Day-1/whats-up-doc/",
+      event: "SRCTF 2026 · Day 1",
+      tag: "IDOR",
+      title: "What's Up Doc?",
+      desc: "Practice management system authentication and IDOR access control flaws on the AussieMed endpoint.",
+    },
+    {
+      href: "/SRCTF-2026/Day-2/this-seems-odd/",
+      event: "SRCTF 2026 · Day 2",
+      tag: "Roster IDOR",
+      title: "This Seems Odd",
+      desc: "Numeric IDOR on /dashboard/patient/?ref= allowing complete roster enumeration to discover hidden VIP patients.",
+    },
+    {
+      href: "/SRCTF-2026/Day-2/i-see-you/",
+      event: "SRCTF 2026 · Day 2",
+      tag: "Ref Forgery",
+      title: "I See You",
+      desc: "Base64 record reference forgery (medicare + name) unlocking high-value patient PDF records.",
+    },
+    {
+      href: "/SRCTF-2026/Day-2/ill-be-reading-that/",
+      event: "SRCTF 2026 · Day 2",
+      tag: "XXE Injection",
+      title: "I'll Be Reading That",
+      desc: "XXE injection in the eRx prescription XML parser leaking .env and Flask session signing keys.",
+    },
+    {
+      href: "/SRCTF-2026/Day-2/the-auditor/",
+      event: "SRCTF 2026 · Day 2",
+      tag: "GraphQL / RCE",
+      title: "The Auditor",
+      desc: "GraphQL alias ordering authorization bypass chained with command injection in a diagnostic worker.",
+    },
+  ]
+
+  function renderFeaturedWriteups() {
+    const container = document.getElementById("featured-writeups")
+    if (!container) return
+
+    const shuffled = [...ALL_FEATURED_WRITEUPS].sort(() => Math.random() - 0.5)
+    const selected = shuffled.slice(0, 3)
+
+    container.innerHTML = selected
+      .map(
+        (w) => `
+      <a class="featured-card" href="${w.href}">
+        <div class="featured-card-header">
+          <span class="featured-card-event">${w.event}</span>
+          <span class="featured-card-tag">${w.tag}</span>
+        </div>
+        <h4 class="featured-card-title">${w.title}</h4>
+        <p class="featured-card-desc">${w.desc}</p>
+      </a>
+    `,
+      )
+      .join("")
+  }
+
   setupReveal()
+  renderFeaturedWriteups()
+
+  document.addEventListener("nav", () => {
+    setupReveal()
+    renderFeaturedWriteups()
+  })
 })()

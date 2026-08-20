@@ -48,14 +48,14 @@
 
     const echoLine = (text: string, cls = "terminal-line--out") => {
       const line = el("div", `terminal-line ${cls}`)
-      line.appendChild(el("span", undefined, text))
+      line.appendChild(el("span", "terminal-text", text))
       output.appendChild(line)
       scrollBottom()
     }
 
     const echoError = (text: string) => {
       const line = el("div", "terminal-line terminal-line--err")
-      line.appendChild(el("span", undefined, text))
+      line.appendChild(el("span", "terminal-text", text))
       output.appendChild(line)
       scrollBottom()
     }
@@ -159,11 +159,6 @@
           return
         case "clear":
           output.replaceChildren()
-          {
-            const line = el("div", "terminal-line")
-            line.appendChild(el("span", "terminal-prompt", promptText()))
-            output.appendChild(line)
-          }
           syncId()
           return
         case "help":
