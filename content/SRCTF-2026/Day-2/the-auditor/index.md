@@ -4,7 +4,7 @@ date: 2026-08-16
 description: A GraphQL alias ordering bug bypasses the admin ownership boundary, leaking the restricted task's service token, which unlocks a command injection in the diagnostic worker that reads the root-only incident transcript.
 ---
 
-**Challenge:** https://ctf.urisc.club/challenges#The%20Auditor-19 (SRCTF 2026, Day 2 - follow-on from [This Seems Odd](SRCTF-2026/Day-2/this-seems-odd/), [I See You](SRCTF-2026/Day-2/i-see-you/) and [I'll Be Reading That](SRCTF-2026/Day-2/ill-be-reading-that/))
+**Challenge:** https://ctf.urisc.club/challenges#The%20Auditor-19
 
 **Goal:** "Use your new access to determine what the admin console can reach, and recover the missing details of the incident."
 

@@ -4,7 +4,7 @@ date: 2026-08-16
 description: An IDOR in the patient roster lets you enumerate every patient in the practice, including the hidden high value patient whose record holds the flag.
 ---
 
-**Challenge:** https://nej3tgmbyzb6.aussiemed.ctf.urisc.club (SRCTF 2026, Day 2 - follow-on from [What's Up Doc?](SRCTF-2026/Day-1/whats-up-doc/))
+**Challenge:** https://ctf.urisc.club/challenges#This%20seems%20odd-38
 
 **Goal:** "You are a doctor now, but it only shows you a limited number of patients. There is a high value patient you are not meant to see, discover them in the list."
 
