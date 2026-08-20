@@ -4,7 +4,7 @@ date: 2026-08-16
 description: The record endpoint's hashed ref is just base64, letting you pull the high value patient's full record PDF and read the flag inside.
 ---
 
-**Challenge:** https://nej3tgmbyzb6.aussiemed.ctf.urisc.club (SRCTF 2026, Day 2 - follow-on from [This Seems Odd](SRCTF-2026/Day-2/this-seems-odd/))
+**Challenge:** https://ctf.urisc.club/challenges#I%20see%20you-22
 
 **Goal:** "We have limited access to patient record records. Find a way to read the records of your high value target."
 
