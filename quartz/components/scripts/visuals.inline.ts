@@ -210,6 +210,13 @@
       desc: "Flag left in an HTML comment on the AussieMed homepage — visible to anyone who views the page source.",
     },
     {
+      href: "/SRCTF-2026/Day-1/hidden-secrets/",
+      event: "SRCTF 2026 · Day 1",
+      tag: "Dir Enumeration",
+      title: "Hidden Secrets",
+      desc: "Directory bruteforcing uncovers the unlisted /about/ page — a WIP endpoint left exposed with the flag in its body.",
+    },
+    {
       href: "/SRCTF-2026/Day-1/help-desk/",
       event: "SRCTF 2026 · Day 1",
       tag: "SQL Injection",
