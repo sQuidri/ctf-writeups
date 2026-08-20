@@ -72,6 +72,7 @@ GET /help/?q=' UNION SELECT config_key,config_value,3 FROM system_config--
 ![final](final.png)
 
 ---
+Revealed clearly in `faq_flag`!
 
 ## Notes
 
