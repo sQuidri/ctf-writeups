@@ -1,5 +1,3 @@
-// Dynamic canvas visualisation: a flowing particle network in the CSIT palette.
-// Runs behind all content, stays full-viewport, and re-renders on theme change.
 ;(function () {
   const root = document.querySelector(".visuals-bg") as HTMLElement | null
   if (!root) return
@@ -203,6 +201,13 @@
       tag: "Info Disclosure",
       title: "Robot Rock",
       desc: "robots.txt Disallow entry advertises a hidden staging page, leaking the flag to anyone who reads it.",
+    },
+    {
+      href: "/SRCTF-2026/Day-1/welcome-home/",
+      event: "SRCTF 2026 · Day 1",
+      tag: "Info Disclosure",
+      title: "Welcome Home",
+      desc: "Flag left in an HTML comment on the AussieMed homepage — visible to anyone who views the page source.",
     },
     {
       href: "/SRCTF-2026/Day-1/help-desk/",
