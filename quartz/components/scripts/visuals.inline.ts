@@ -198,6 +198,20 @@
       desc: "Practice management system authentication and IDOR access control flaws on the AussieMed endpoint.",
     },
     {
+      href: "/SRCTF-2026/Day-1/robot-rock/",
+      event: "SRCTF 2026 · Day 1",
+      tag: "Info Disclosure",
+      title: "Robot Rock",
+      desc: "robots.txt Disallow entry advertises a hidden staging page, leaking the flag to anyone who reads it.",
+    },
+    {
+      href: "/SRCTF-2026/Day-1/help-desk/",
+      event: "SRCTF 2026 · Day 1",
+      tag: "SQL Injection",
+      title: "Help Desk",
+      desc: "UNION-based SQLi in the unauthenticated help search enumerates sqlite_master and dumps the flag from system_config.",
+    },
+    {
       href: "/SRCTF-2026/Day-2/this-seems-odd/",
       event: "SRCTF 2026 · Day 2",
       tag: "Roster IDOR",
