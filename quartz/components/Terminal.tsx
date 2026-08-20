@@ -24,14 +24,18 @@ const Terminal: QuartzComponent = ({ allFiles, displayClass }: QuartzComponentPr
 
   return (
     <div class={classNames(displayClass, "terminal")}>
-      <div class="terminal-id">sigsegv@ctf:~/challenges</div>
-      <div class="terminal-output">
+      <div class="terminal-header">
+        <div class="terminal-status-dot" aria-hidden="true" />
+        <h3 class="terminal-title">Terminal</h3>
+        <span class="terminal-id">sigsegv@ctf:~/challenges</span>
+      </div>
+      <div class="terminal-output" tabindex={0} role="region" aria-label="Terminal output">
         <div class="terminal-line">
           <span class="terminal-prompt">$</span>
           <span class="terminal-cmd">ls</span>
         </div>
         {challenges.map((c, i) => (
-          <div class="terminal-line terminal-line--out">
+          <div class="terminal-line terminal-line--out" key={c.slug}>
             <span class="terminal-list-index">[{i + 1}]</span>
             <a class="terminal-link" href={toUrl(c.slug!)}>
               {toName(c.slug!)}/
@@ -45,15 +49,17 @@ const Terminal: QuartzComponent = ({ allFiles, displayClass }: QuartzComponentPr
           class="terminal-input"
           type="text"
           autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
           spellcheck={false}
-          placeholder="type a number, or try: ls, cd .."
+          placeholder="ls, cd, 1-9, help..."
           aria-label="Terminal input"
         />
       </div>
-      <div class="terminal-hint">type a challenge number + enter to open it</div>
+      <div class="terminal-hint">Enter # or cmd · 'help' for info</div>
       <ul class="terminal-list" hidden>
         {challenges.map((c, i) => (
-          <li class="terminal-list-item">
+          <li class="terminal-list-item" key={c.slug}>
             <span class="terminal-list-index">[{i + 1}]</span>
             <a href={toUrl(c.slug!)} data-challenge={i + 1} data-name={toName(c.slug!)}>
               {c.frontmatter?.title}

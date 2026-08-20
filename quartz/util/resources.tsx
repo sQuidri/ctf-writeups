@@ -23,12 +23,31 @@ export type CSSResource = {
   spaPreserve?: boolean
 }
 
+export const BUILD_VERSION = Date.now().toString(36)
+
+export function withVersion(url: string): string {
+  if (
+    url.includes("?") ||
+    url.startsWith("data:") ||
+    url.startsWith("http://") ||
+    url.startsWith("https://")
+  ) {
+    return url
+  }
+  return `${url}?v=${BUILD_VERSION}`
+}
+
 export function JSResourceToScriptElement(resource: JSResource, preserve?: boolean): JSX.Element {
   const scriptType = resource.moduleType ?? "application/javascript"
   const spaPreserve = preserve ?? resource.spaPreserve
   if (resource.contentType === "external") {
     return (
-      <script key={resource.src} src={resource.src} type={scriptType} spa-preserve={spaPreserve} />
+      <script
+        key={resource.src}
+        src={withVersion(resource.src)}
+        type={scriptType}
+        spa-preserve={spaPreserve}
+      />
     )
   } else {
     const content = resource.script
@@ -51,7 +70,7 @@ export function CSSResourceToStyleElement(resource: CSSResource, preserve?: bool
     return (
       <link
         key={resource.content}
-        href={resource.content}
+        href={withVersion(resource.content)}
         rel="stylesheet"
         type="text/css"
         spa-preserve={spaPreserve}

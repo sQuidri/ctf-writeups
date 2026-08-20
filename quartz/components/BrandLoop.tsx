@@ -7,7 +7,9 @@ const BrandLoop: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
     <div class={classNames(displayClass, "brand-loop")} aria-hidden="true">
       <div class="brand-loop-block">
         <div class="brand-loop-inner">
-          <p class="brand-loop-text">SIGSEGV</p>
+          <p class="brand-loop-text" data-text="SIGSEGV">
+            SIGSEGV
+          </p>
           <span class="brand-loop-cursor" />
         </div>
         <div class="brand-loop-users">

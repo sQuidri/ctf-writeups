@@ -22,22 +22,13 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   left: [
     Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
-        { Component: Component.Darkmode() },
-      ],
-    }),
+    Component.Search(),
     Component.Explorer({
       title: "Writeups",
       folderDefaultState: "open",
     }),
   ],
   right: [
-    Component.DesktopOnly(Component.TableOfContents()),
     Component.DesktopOnly(Component.BrandLoop()),
     Component.DesktopOnly(Component.Terminal()),
     Component.Backlinks(),
@@ -49,15 +40,7 @@ export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
     Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
-        { Component: Component.Darkmode() },
-      ],
-    }),
+    Component.Search(),
     Component.Explorer({
       title: "Writeups",
       folderDefaultState: "open",
