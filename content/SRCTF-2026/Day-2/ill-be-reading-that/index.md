@@ -4,7 +4,7 @@ date: 2026-08-16
 description: An XXE in the eRx prescription import reads arbitrary files, leaking the .env with the Flask session signing key.
 ---
 
-**Challenge:** https://nej3tgmbyzb6.aussiemed.ctf.urisc.club (SRCTF 2026, Day 2 - follow-on from [I See You](SRCTF-2026/Day-2/i-see-you/))
+**Challenge:** https://ctf.urisc.club/challenges#I'll%20be%20reading%20that-23
 
 **Goal:** "We're logged in as a manager, but the application never reveals its secret signing key, so our goal is to look beyond the application and find what the developers accidentally left exposed."
 
