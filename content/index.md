@@ -17,6 +17,6 @@ title: SIGSEGV Archive
 <div class="featured-writeups-grid" id="featured-writeups">
 </div>
 
-> [!note] Navigation & Terminal
+> [!info] Navigation & Terminal
 > - Use the **interactive terminal** in the right sidebar / on the bottom of the screen to browse writeups directly (`ls`, `1`-`9`, `open <name>`).
 > - Press `Ctrl + K` on PC to search writeups by tag, keyword, or payload.
