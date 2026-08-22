@@ -6,7 +6,7 @@ challenge_author: "Kay"
 writeup_author: "sleepyswords"
 ---
 
-**Challenge:** https://ctf.urisc.club/challenges#Patient%20Zero%20-25 (SRCTF 2026, Day 1)
+**Challenge:** https://ctf.urisc.club/challenges#Patient%20Zero%20-25
 
 **Goal:** "You start with no initial access or account. The goal is to register a new user account, but registration requires a valid medical license number."
 

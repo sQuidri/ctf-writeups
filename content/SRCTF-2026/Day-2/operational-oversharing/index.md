@@ -6,7 +6,7 @@ challenge_author: "Bill"
 writeup_author: "sleepyswords"
 ---
 
-**Challenge:** https://ctf.urisc.club/challenges#Operational%20Oversharing-37 (SRCTF 2026, Day 2)
+**Challenge:** https://ctf.urisc.club/challenges#Operational%20Oversharing-37
 
 **Goal:** "AussieMed has launched a public status dashboard so clinics can monitor its production services. The page promises to show only the approved public summary, but the browser may receive more than it displays. Find the note that operations did not mean to publish. Visit: /service-status"
 
