@@ -1,4 +1,4 @@
----
+﻿---
 title: "Hidden Secrets"
 date: 2026-08-15
 description: directory bruteforcing with ffuf/dirb uncovers the unlisted /about/ page which contains the flag and tells you exactly how it was found.
