@@ -224,6 +224,20 @@
       desc: "UNION-based SQLi in the unauthenticated help search enumerates sqlite_master and dumps the flag from system_config.",
     },
     {
+      href: "/SRCTF-2026/Day-1/patient-zero/",
+      event: "SRCTF 2026 · Day 1",
+      tag: "Auth Bypass",
+      title: "Patient Zero",
+      desc: "Client-controlled isLicensed field allows registration of arbitrary medical licenses to gain authenticated dashboard access.",
+    },
+    {
+      href: "/SRCTF-2026/Day-2/operational-oversharing/",
+      event: "SRCTF 2026 · Day 2",
+      tag: "API Leak",
+      title: "Operational Oversharing",
+      desc: "API endpoint reveals an unprotected operator report URL containing a base64-encoded internal flag.",
+    },
+    {
       href: "/SRCTF-2026/Day-2/this-seems-odd/",
       event: "SRCTF 2026 · Day 2",
       tag: "Roster IDOR",

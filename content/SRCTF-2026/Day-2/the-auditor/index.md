@@ -2,6 +2,8 @@
 title: "The Auditor"
 date: 2026-08-16
 description: A GraphQL alias ordering bug bypasses the admin ownership boundary, leaking the restricted task's service token, which unlocks a command injection in the diagnostic worker that reads the root-only incident transcript.
+challenge_author: "Bill"
+writeup_author: "wallsdeep13"
 ---
 
 **Challenge:** https://ctf.urisc.club/challenges#The%20Auditor-19
