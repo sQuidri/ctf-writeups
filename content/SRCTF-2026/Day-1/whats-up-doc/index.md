@@ -2,6 +2,8 @@
 title: "What's Up Doc?"
 date: 2026-08-15
 description: An IDOR in the profile update endpoint lets you take over any doctor account by submitting their license number & name.
+challenge_author: "Luc"
+writeup_author: "wallsdeep13"
 ---
 **Challenge:** https://ctf.urisc.club/challenges#What's%20Up%20Doc?-18
 

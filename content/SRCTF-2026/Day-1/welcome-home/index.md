@@ -1,7 +1,9 @@
-﻿---
+---
 title: "Welcome Home"
 date: 2026-08-15
 description: flag hidden in an HTML comment inside the homepage source
+challenge_author: "James"
+writeup_author: "wallsdeep13"
 ---
 **Challenge:** https://ctf.urisc.club/challenges#Welcome%20Home-26
 

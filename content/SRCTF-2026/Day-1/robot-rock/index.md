@@ -2,6 +2,8 @@
 title: "Robot Rock"
 date: 2026-08-15
 description: robots.txt discloses a hidden staging path that contains the flag — security through obscurity fails when you advertise the secret.
+challenge_author: "Not specified"
+writeup_author: "wallsdeep13"
 ---
 **Challenge:** https://ctf.urisc.club/challenges#Robot%20Rock-33
 

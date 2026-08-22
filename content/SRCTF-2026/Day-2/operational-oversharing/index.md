@@ -2,6 +2,8 @@
 title: "Operational Oversharing"
 date: 2026-08-16
 description: An API endpoint leaks more information than displayed.
+challenge_author: "Bill"
+writeup_author: "sleepyswords"
 ---
 
 **Challenge:** https://ctf.urisc.club/challenges#Operational%20Oversharing-37 (SRCTF 2026, Day 2)

@@ -2,6 +2,8 @@
 title: "I See You"
 date: 2026-08-16
 description: The record endpoint's hashed ref is just base64, letting you pull the high value patient's full record PDF and read the flag inside.
+challenge_author: "Kay"
+writeup_author: "wallsdeep13"
 ---
 
 **Challenge:** https://ctf.urisc.club/challenges#I%20see%20you-22

@@ -2,6 +2,8 @@
 title: "I'll Be Reading That"
 date: 2026-08-16
 description: An XXE in the eRx prescription import reads arbitrary files, leaking the .env with the Flask session signing key.
+challenge_author: "Kay"
+writeup_author: "wallsdeep13"
 ---
 
 **Challenge:** https://ctf.urisc.club/challenges#I'll%20be%20reading%20that-23

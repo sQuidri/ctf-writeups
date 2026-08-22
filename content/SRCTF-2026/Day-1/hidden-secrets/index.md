@@ -1,7 +1,9 @@
-﻿---
+---
 title: "Hidden Secrets"
 date: 2026-08-15
 description: directory bruteforcing with ffuf/dirb uncovers the unlisted /about/ page which contains the flag and tells you exactly how it was found.
+challenge_author: "James"
+writeup_author: "wallsdeep13"
 ---
 **Challenge:** https://ctf.urisc.club/challenges#Hidden%20Secrets-28
 

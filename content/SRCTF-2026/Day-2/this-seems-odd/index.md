@@ -2,6 +2,8 @@
 title: "This Seems Odd"
 date: 2026-08-16
 description: An IDOR in the patient roster lets you enumerate every patient in the practice, including the hidden high value patient whose record holds the flag.
+challenge_author: "Kay"
+writeup_author: "wallsdeep13"
 ---
 
 **Challenge:** https://ctf.urisc.club/challenges#This%20seems%20odd-38

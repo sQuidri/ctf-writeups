@@ -2,6 +2,8 @@
 title: "Patient Zero"
 date: 2026-08-15
 description: Client controlled isLicensed field allows registration of accounts with invalid medical licenses.
+challenge_author: "Kay"
+writeup_author: "sleepyswords"
 ---
 
 **Challenge:** https://ctf.urisc.club/challenges#Patient%20Zero%20-25 (SRCTF 2026, Day 1)

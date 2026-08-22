@@ -1,7 +1,9 @@
-﻿---
+---
 title: "Help Desk"
 date: 2026-08-15
 description: SQL injection in the unauthenticated help search endpoint leaks the database schema and a hidden system_config table containing the flag via UNION-based extraction.
+challenge_author: "Varun"
+writeup_author: "wallsdeep13"
 ---
 **Challenge:** https://ctf.urisc.club/challenges#Help%20Desk-21
 
