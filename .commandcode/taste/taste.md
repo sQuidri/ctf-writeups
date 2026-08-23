@@ -1,6 +1,7 @@
 - Prefers bash scripts for local deploy/sync automation (e.g., requested a `deploy.sh` to sync content to servers). Confidence: 0.8
 - Uses GitHub Actions for CI/CD, auto-deploying on commit+push to the main branch. Confidence: 0.8
 - Hosts infrastructure on Oracle Cloud (OCI) VMs with nginx + Let's Encrypt/certbot, using DuckDNS dynamic DNS for domains. Confidence: 0.7
+- Expects the agent to investigate live infrastructure/production issues directly on the OCI VM over SSH (using the key at `C:\Users\sadiq\.ssh\oci_ctf_vm`, `opc@158.179.28.218`, with `sudo`), not just read local config files — roots out the actual cause on the server (DNS, certs, nginx, firewall) rather than only hypothesizing. Confidence: 0.7
 - Prefers memorable, topic-relevant naming (e.g., a `writeups` subdomain) and domain aliases over duplicate configurations. Confidence: 0.6
 - Develops on Windows with VSCode; bash scripts must be run under Git Bash — on this machine plain `bash` resolves to WSL (which can't see the Windows `node` on PATH), so `deploy.sh` is invoked via the explicit Git Bash path (`C:\Users\sadiq\AppData\Local\Programs\Git\bin\bash.exe deploy.sh`). Confidence: 0.8
 - Values polished, modern web design with dynamic/animating elements (e.g., glassmorphism, particle networks, intro loaders) and likes matching a reference site's colors/styling. Confidence: 0.7

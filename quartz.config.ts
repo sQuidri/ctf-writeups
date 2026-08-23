@@ -11,7 +11,7 @@ const config: QuartzConfig = {
     analytics: {
       provider: "plausible"
     },
-    baseUrl: "ctf.sigsev.site",
+    baseUrl: "sigsev.site",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {

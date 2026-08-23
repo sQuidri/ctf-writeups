@@ -4,5 +4,5 @@ Writeups for CTF challenges Swords and I have solved, built with [Quartz](https:
 
 ## Site
 
-- **https://ctf.sigsev.site/**
-- **https://ctf.sigsev.au/**
+- **https://sigsev.site/**
+- **https://sigsev.au/**

@@ -30,6 +30,6 @@ rm -f /tmp/ctf-writeups.tar.gz
 "@
 
 Write-Host "==> Deployed successfully!" -ForegroundColor Green
-Write-Host "    https://ctf.sigsev.site" -ForegroundColor Cyan
-Write-Host "    https://ctf.sigsev.au" -ForegroundColor Cyan
+Write-Host "    https://sigsev.site" -ForegroundColor Cyan
+Write-Host "    https://sigsev.au" -ForegroundColor Cyan
 Write-Host "    https://writeups.sigsegv-ctf.duckdns.org" -ForegroundColor Cyan

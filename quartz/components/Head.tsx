@@ -5,6 +5,8 @@ import { googleFontHref, googleFontSubsetHref } from "../util/theme"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { unescapeHTML } from "../util/escape"
 import { CustomOgImagesEmitterName } from "../plugins/emitters/ogImage"
+// @ts-ignore
+import canonicalScript from "./scripts/canonical.inline"
 export default (() => {
   const Head: QuartzComponent = ({
     cfg,
@@ -101,5 +103,7 @@ export default (() => {
     )
   }
 
-  return Head
+  Head.afterDOMLoaded = canonicalScript
+
+    return Head
 }) satisfies QuartzComponentConstructor
