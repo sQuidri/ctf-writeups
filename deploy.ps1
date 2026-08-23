@@ -19,12 +19,18 @@ Remove-Item "$tarball"
 
 Write-Host "==> Extracting and applying changes on VM..." -ForegroundColor Cyan
 ssh -i "$SSH_KEY" -o StrictHostKeyChecking=accept-new "${VM_USER}@${VM_HOST}" @"
-sudo rm -rf /opt/ctf-writeups/public
-sudo mkdir -p /opt/ctf-writeups/public
-sudo tar -xzf /tmp/ctf-writeups.tar.gz -C /opt/ctf-writeups/public
-sudo chown -R root:root /opt/ctf-writeups/public
-sudo chcon -R -t httpd_sys_content_t /opt/ctf-writeups/public
+set -e
+sudo rm -rf /opt/ctf-writeups/.public-new
+sudo mkdir -p /opt/ctf-writeups/.public-new
+sudo tar -xzf /tmp/ctf-writeups.tar.gz -C /opt/ctf-writeups/.public-new
+sudo chown -R root:root /opt/ctf-writeups/.public-new
+sudo chcon -R -t httpd_sys_content_t /opt/ctf-writeups/.public-new
+sudo test -f /opt/ctf-writeups/.public-new/index.html
 sudo nginx -t
+sudo rm -rf /opt/ctf-writeups/.public-old
+if [ -d /opt/ctf-writeups/public ]; then sudo mv /opt/ctf-writeups/public /opt/ctf-writeups/.public-old; fi
+sudo mv /opt/ctf-writeups/.public-new /opt/ctf-writeups/public
+sudo rm -rf /opt/ctf-writeups/.public-old
 sudo systemctl reload nginx
 rm -f /tmp/ctf-writeups.tar.gz
 "@
