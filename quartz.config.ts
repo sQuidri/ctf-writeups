@@ -11,7 +11,7 @@ const config: QuartzConfig = {
     analytics: {
       provider: "plausible"
     },
-    baseUrl: "https://writeups.wis-ctf.duckdns.org",
+    baseUrl: "ctf.sigsev.site",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
