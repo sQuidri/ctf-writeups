@@ -11,7 +11,6 @@
   let width = 0
   let height = 0
   let dpr = Math.min(window.devicePixelRatio || 1, 2)
-  let raf = 0
   let particles: Particle[] = []
   const mouse = { x: -9999, y: -9999 }
 
@@ -55,6 +54,7 @@
   }
 
   function resize() {
+    if (!canvas || !ctx) return
     dpr = Math.min(window.devicePixelRatio || 1, 2)
     width = window.innerWidth
     height = window.innerHeight
@@ -69,6 +69,7 @@
   }
 
   function step() {
+    if (!ctx) return
     ctx.clearRect(0, 0, width, height)
 
     const linkDist = Math.max(110, Math.min(170, width / 9))
@@ -125,7 +126,7 @@
     }
     ctx.globalAlpha = 1
 
-    raf = requestAnimationFrame(step)
+    requestAnimationFrame(step)
   }
 
   function onThemeChange() {
@@ -264,6 +265,118 @@
       tag: "GraphQL / RCE",
       title: "The Auditor",
       desc: "GraphQL alias ordering authorization bypass chained with command injection in a diagnostic worker.",
+    },
+    {
+      href: "/CubeCTF-2025/Web/legal-snacks/",
+      event: "CubeCTF 2025 · Web",
+      tag: "Business Logic",
+      title: "Legal Snacks",
+      desc: "Negative quantity parameter tampering in shopping cart calculation bypasses balance checks to purchase high-value items.",
+    },
+    {
+      href: "/CubeCTF-2025/Web/todo/",
+      event: "CubeCTF 2025 · Web",
+      tag: "Prototype Pollution",
+      title: "Todo",
+      desc: "Django-Unicorn attribute traversal via __init__.__globals__ modifies runtime settings to exfiltrate secrets via webhook.",
+    },
+    {
+      href: "/CubeCTF-2025/Misc/is-this-stego/",
+      event: "CubeCTF 2025 · Misc",
+      tag: "OSINT / Geolocation",
+      title: "Is this stego?",
+      desc: "Visual geolocation reconnaissance identifying the Oasis Cable Car Station in Santiago, Chile, from architectural cues.",
+    },
+    {
+      href: "/CubeCTF-2025/Rev/gnisrever/",
+      event: "CubeCTF 2025 · Rev",
+      tag: "Stream Leaking",
+      title: "Gnisrever",
+      desc: "Assembly execution sandbox suppresses stdout but leaks stderr, allowing flag exfiltration from environment variables.",
+    },
+    {
+      href: "/CubeCTF-2025/Crypto/incantation/",
+      event: "CubeCTF 2025 · Crypto",
+      tag: "PRNG Prediction",
+      title: "Incantation",
+      desc: "Reverse engineering a UPX-packed ELF binary to synchronize a time-seeded PRNG and recover the flag across network latency.",
+    },
+    {
+      href: "/CubeCTF-2025/Forensics/discord/",
+      event: "CubeCTF 2025 · Forensics",
+      tag: "PyInstaller / AES",
+      title: "Discord",
+      desc: "Decompiling PyInstaller bytecode from a disk image to reverse PBKDF2 AES-CBC encryption using Discord Snowflake IDs.",
+    },
+    {
+      href: "/CubeCTF-2025/Forensics/operator/",
+      event: "CubeCTF 2025 · Forensics",
+      tag: "PCAP / Replay",
+      title: "operator",
+      desc: "Reconstructing a multi-stage backdoor binary from raw TCP packet streams and replaying payload traffic to extract secrets.",
+    },
+    {
+      href: "/GPNCTF-2025/Misc/check-it-out/",
+      event: "GPNCTF 2025 · Misc",
+      tag: "Git Precedence",
+      title: "Check-it-out",
+      desc: "Exploiting Git branch name vs. commit hash precedence to hijack automated evaluation scripts.",
+    },
+    {
+      href: "/GPNCTF-2025/Pwn/note-editor/",
+      event: "GPNCTF 2025 · Pwn",
+      tag: "Buffer Overflow",
+      title: "Note Editor",
+      desc: "Stack buffer overflow in a note editor binary, redirecting execution flow to a hidden win() function.",
+    },
+    {
+      href: "/GPNCTF-2025/Rev/the-old-way/",
+      event: "GPNCTF 2025 · Rev",
+      tag: "Matrix Inversion",
+      title: "The old way",
+      desc: "Reversing a 40x40 linear system of simultaneous equations in a cryptographic checker using matrix algebra.",
+    },
+    {
+      href: "/GPNCTF-2025/Web/free-flagging/",
+      event: "GPNCTF 2025 · Web",
+      tag: "Magic Hashes",
+      title: "Free Flagging",
+      desc: "PHP loose comparison type juggling with MD5 magic hashes starting with 0e evaluating to zero.",
+    },
+    {
+      href: "/GPNCTF-2025/Web/intro-to-web-part-1/",
+      event: "GPNCTF 2025 · Web",
+      tag: "LFI / Traversal",
+      title: "Intro to Web - Part 1",
+      desc: "Client-side parameter tampering on hidden form inputs allows reading the server's .env file.",
+    },
+    {
+      href: "/GPNCTF-2025/Web/intro-to-web-part-2/",
+      event: "GPNCTF 2025 · Web",
+      tag: "Session Forgery",
+      title: "Intro to Web - Part 2",
+      desc: "Forging Flask session cookies using leaked secret keys to access restricted moderator endpoints.",
+    },
+    {
+      href: "/GPNCTF-2025/Web/intro-to-web-part-3/",
+      event: "GPNCTF 2025 · Web",
+      tag: "Stored XSS",
+      title: "Intro to Web - Part 3",
+      desc: "Stored Cross-Site Scripting in note reports to steal administrator session cookies via webhook exfiltration.",
+    },
+    {
+      href: "/GPNCTF-2025/Web/intro-to-web-part-4/",
+      event: "GPNCTF 2025 · Web",
+      tag: "XSS / CSRF",
+      title: "Intro to Web - Part 4",
+      desc: "Admin-context XSS triggers internal settings API to enable development routes and expose the flag.",
+    },
+    {
+      href: "/GPNCTF-2025/Web/real-christmas/",
+      event: "GPNCTF 2025 · Web",
+      tag: "GraphQL Injection",
+      title: "Real Christmas",
+      desc: "GraphQL injection via string concatenation in user registration allows chaining unauthorized admin mutations.",
     },
   ]
 

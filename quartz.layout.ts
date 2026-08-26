@@ -24,7 +24,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Explorer({
-      title: "Writeups",
+      title: "",
       folderDefaultState: "open",
     }),
   ],
@@ -42,7 +42,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Explorer({
-      title: "Writeups",
+      title: "",
       folderDefaultState: "open",
     }),
   ],

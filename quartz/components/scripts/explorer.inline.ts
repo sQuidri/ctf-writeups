@@ -284,6 +284,18 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
 
     mobileExplorer.classList.remove("hide-until-loaded")
   }
+
+  const leftSidebar = document.querySelector(".sidebar.left") as HTMLElement | null
+  const explorerUl = document.querySelector(".explorer-ul") as HTMLElement | null
+  if (leftSidebar && explorerUl) {
+    const onWheel = (evt: WheelEvent) => {
+      if (!explorerUl.contains(evt.target as Node)) {
+        explorerUl.scrollTop += evt.deltaY
+      }
+    }
+    leftSidebar.addEventListener("wheel", onWheel, { passive: true })
+    window.addCleanup(() => leftSidebar.removeEventListener("wheel", onWheel))
+  }
 })
 
 window.addEventListener("resize", function () {

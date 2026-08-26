@@ -1,5 +1,6 @@
 ---
 title: SRCTF 2026
+date: 2026-08-16
 ---
 
 **SRCTF 2026** was co-hosted on the 15th and 16th of August by **SWITCH**, **CSIT**, and **RISC** as Tech Related Clubs @ **RMIT**. This was the first time we ([Sadiq](https://www.linkedin.com/in/sadiq-quadri-71795a33b/) & [Ibrahim](https://www.linkedin.com/in/ibrahim-hizamul-ansari-4809b226a/)) went to an in-person CTF, and the vibe and general feeling was just so much more pleasant than any online CTF I've partaken in, with socialisation and networking being a huge part of the event that I enjoyed.

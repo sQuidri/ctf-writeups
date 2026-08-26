@@ -1,5 +1,6 @@
 ---
-title: SRCTF 2026 - Day 1
+title: Day 1
+date: 2026-08-15
 ---
 
 Writeups from Day 1 of SRCTF 2026, held on 15/08/2026

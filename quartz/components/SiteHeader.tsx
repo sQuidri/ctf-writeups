@@ -11,6 +11,8 @@ interface NavLink {
 const defaultLinks: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "SRCTF 2026", href: "/SRCTF-2026/" },
+  { label: "CubeCTF 2025", href: "/CubeCTF-2025/" },
+  { label: "GPNCTF 2025", href: "/GPNCTF-2025/" },
 ]
 
 const SiteHeader: QuartzComponent = ({ cfg, displayClass }: QuartzComponentProps) => {

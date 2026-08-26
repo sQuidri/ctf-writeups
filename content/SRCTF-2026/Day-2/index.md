@@ -1,5 +1,6 @@
 ---
-title: SRCTF 2026 - Day 2
+title: Day 2
+date: 2026-08-16
 ---
 
 Writeups from Day 2 of SRCTF 2026, held on 16/08/2026
