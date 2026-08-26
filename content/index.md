@@ -37,10 +37,11 @@ title: Archive
 - **Placement:** **687th Place** (*RMIT Computing* / *RMITC* - 50 pts)
 - **Team:** [Sadiq](https://www.linkedin.com/in/sadiq-quadri-71795a33b/) (`wallsdeep13`) & [Ibrahim](https://www.linkedin.com/in/ibrahim-hizamul-ansari-4809b226a/) (`sleepyswords`)
 
-### Australian Cyber Security Games 2025
+### Aust Cyber Security Games 2025
 **Hosted by SECedu**
 - **Placement:** **3rd Place** (*RMIT RISC* - 16,900 pts)
 - **Team:** [Sadiq](https://www.linkedin.com/in/sadiq-quadri-71795a33b/) (`wallsdeep13`), [Ibrahim](https://www.linkedin.com/in/ibrahim-hizamul-ansari-4809b226a/) (`sleepyswords`) & `msimonelli`
+![3rd Place](austcyber.png)
 
 ---
 ## Random Writeups
