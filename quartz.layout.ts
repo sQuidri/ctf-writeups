@@ -25,7 +25,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Search(),
     Component.Explorer({
       title: "",
-      folderDefaultState: "open",
+      folderDefaultState: "collapsed",
     }),
   ],
   right: [
@@ -43,7 +43,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.Search(),
     Component.Explorer({
       title: "",
-      folderDefaultState: "open",
+      folderDefaultState: "collapsed",
     }),
   ],
   right: [

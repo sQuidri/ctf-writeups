@@ -216,15 +216,20 @@ async function setupExplorer(currentSlug: FullSlug) {
     }
     explorerUl.insertBefore(fragment, explorerUl.firstChild)
 
-    // restore explorer scrollTop position if it exists
-    const scrollTop = sessionStorage.getItem("explorerScrollTop")
-    if (scrollTop) {
-      explorerUl.scrollTop = parseInt(scrollTop)
+    // restore explorer scrollTop position if it exists and not on homepage
+    if (currentSlug === "index" || currentSlug === "") {
+      sessionStorage.removeItem("explorerScrollTop")
+      explorerUl.scrollTop = 0
     } else {
-      // try to scroll to the active element if it exists
-      const activeElement = explorerUl.querySelector(".active")
-      if (activeElement) {
-        activeElement.scrollIntoView({ behavior: "smooth" })
+      const scrollTop = sessionStorage.getItem("explorerScrollTop")
+      if (scrollTop) {
+        explorerUl.scrollTop = parseInt(scrollTop)
+      } else {
+        // try to scroll to the active element if it exists
+        const activeElement = explorerUl.querySelector(".active")
+        if (activeElement) {
+          activeElement.scrollIntoView({ behavior: "smooth" })
+        }
       }
     }
 
@@ -283,18 +288,6 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
     }
 
     mobileExplorer.classList.remove("hide-until-loaded")
-  }
-
-  const leftSidebar = document.querySelector(".sidebar.left") as HTMLElement | null
-  const explorerUl = document.querySelector(".explorer-ul") as HTMLElement | null
-  if (leftSidebar && explorerUl) {
-    const onWheel = (evt: WheelEvent) => {
-      if (!explorerUl.contains(evt.target as Node)) {
-        explorerUl.scrollTop += evt.deltaY
-      }
-    }
-    leftSidebar.addEventListener("wheel", onWheel, { passive: true })
-    window.addCleanup(() => leftSidebar.removeEventListener("wheel", onWheel))
   }
 })
 
