@@ -1,8 +1,6 @@
 @use "./base.scss";
 
-// Refined theme styling
-
-// Glassmorphism panels for sidebar and header regions
+// Glassmorphism panels for sidebars
 .sidebar.left,
 .sidebar.right {
   position: sticky;
@@ -86,7 +84,7 @@
   }
 }
 
-// Accent-tinted visible fatter scrollbar
+// Scrollbars
 * {
   scrollbar-width: thin;
   scrollbar-color: rgba(56, 189, 248, 0.55) rgba(255, 255, 255, 0.04);
@@ -112,7 +110,6 @@
   background: rgba(56, 189, 248, 0.85);
 }
 
-// Refined code blocks
 pre {
   border-radius: 0.9rem;
   border: 1px solid var(--lightgray);
@@ -122,7 +119,6 @@ pre {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-// Card-like section lists
 ul.section-ul {
   display: flex;
   flex-direction: column;
@@ -151,7 +147,6 @@ li.section-li {
   }
 }
 
-// Soft hover for tags
 a.internal.tag-link {
   transition:
     background 0.3s ease,
@@ -163,12 +158,11 @@ a.internal.tag-link {
   }
 }
 
-// Navigation progress uses the accent
 .navigation-progress {
   background: var(--secondary);
 }
 
-// Custom cyber callout block styling
+// Cyberpunk-styled callout boxes
 .callout {
   border-radius: 0.85rem;
   margin: 1.75rem 0;
@@ -229,7 +223,7 @@ a.internal.tag-link {
   }
 }
 
-// Table styling
+// Tables
 table {
   width: 100%;
   border-collapse: collapse;
@@ -262,7 +256,6 @@ table {
   }
 }
 
-// Middle content spacing and margins
 .page-header,
 .center {
   padding-left: 2rem;
@@ -270,7 +263,7 @@ table {
   box-sizing: border-box;
 }
 
-// Mobile-responsive optimizations
+// Mobile responsive tweaks
 @media (max-width: 800px) {
   .page-header {
     margin-top: 3.6rem !important;
@@ -350,7 +343,7 @@ table {
   }
 }
 
-// Featured Writeups Cards Grid (strictly 3 cards)
+// 3-card featured writeups grid
 .featured-writeups-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

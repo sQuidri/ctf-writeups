@@ -30,8 +30,7 @@ const defaultOptions: Options = {
     return node
   },
   sortFn: (a, b) => {
-    // Sort order: folders first, then sort by date (most recent on top, oldest on bottom),
-    // and fallback to alphabetical/numeric order if dates are equal or absent.
+    // Folders first, newest dates on top, then alphabetical fallback
     if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
       const timeA = a.data?.date ? new Date(a.data.date).getTime() : 0
       const timeB = b.data?.date ? new Date(b.data.date).getTime() : 0

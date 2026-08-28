@@ -4,22 +4,19 @@ def add_blue_border(input_path, output_path, border_width_ratio=0.03):
     img = Image.open(input_path).convert("RGBA")
     w, h = img.size
     
-    # Determine a good border width based on image size
+    # Scale border with image dimensions
     border_width = max(2, int(min(w, h) * border_width_ratio))
     
-    # Create mask for round crop
+    # Circular crop mask
     mask = Image.new('L', (w, h), 0)
     draw_mask = ImageDraw.Draw(mask)
     draw_mask.ellipse((0, 0, w, h), fill=255)
     
-    # Apply mask
     result = img.copy()
     result.putalpha(mask)
     
-    # Draw blue border
     draw = ImageDraw.Draw(result)
-    # The bounding box needs to be offset by half the border width 
-    # to fit entirely within the image bounds without getting clipped
+    # Inset bounding box by half stroke width to avoid edge clipping
     bbox = (
         border_width // 2,
         border_width // 2,

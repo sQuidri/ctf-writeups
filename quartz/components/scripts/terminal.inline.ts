@@ -1,4 +1,4 @@
-// Virtual shell for the fake terminal: ls, cd, pwd, open, clear, and number navigation.
+// Interactive sidebar terminal emulator (ls, cd, pwd, open, clear, challenge jumping)
 ;(function () {
   document.addEventListener("nav", () => {
     const screen = document.querySelector(".terminal") as HTMLElement | null

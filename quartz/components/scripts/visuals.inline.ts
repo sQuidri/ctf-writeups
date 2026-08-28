@@ -84,7 +84,7 @@
       if (p.y < -30) p.y = height + 30
       if (p.y > height + 30) p.y = -30
 
-      // gentle mouse repulsion
+      // Push particles gently away from cursor
       const dx = p.x - mouse.x
       const dy = p.y - mouse.y
       const md = Math.hypot(dx, dy)
@@ -94,7 +94,7 @@
       }
     }
 
-    // links
+    // Connect close neighbors with translucent lines
     for (let i = 0; i < particles.length; i++) {
       const a = particles[i]
       for (let j = i + 1; j < particles.length; j++) {
@@ -114,7 +114,7 @@
       }
     }
 
-    // nodes
+    // Particle nodes with subtle pulse
     for (const p of particles) {
       const glow = (Math.sin(p.pulse) + 1) / 2
       const r = p.r + glow * 1.1
@@ -151,7 +151,7 @@
   resize()
   step()
 
-  // Staggered scroll-reveal for content blocks (CSIT-style "staggeredScroll" feel)
+  // Staggered scroll-reveal for article blocks and sections
   function setupReveal() {
     const targets = document.querySelectorAll<HTMLElement>(
       "article > *, .page-header > .popover-hint > *, .page-footer, li.section-li",

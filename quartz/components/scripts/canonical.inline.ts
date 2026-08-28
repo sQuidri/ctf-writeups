@@ -1,8 +1,6 @@
 ;(function () {
-  // The site is served from multiple domains (sigsev.site / sigsev.au / duckdns).
-  // Quartz bakes og:url / twitter:url / og:image / canonical from a single hardcoded
-  // baseUrl, so rewrite them on the client to match whichever host the visitor is
-  // actually on. This keeps shared-link metadata consistent no matter which domain.
+  // Quartz bakes metadata with a fixed baseUrl at build time.
+  // Rewrite og:url, canonical and twitter meta on client to match whatever domain visitor is browsing.
   function rewriteCanonicalHost() {
     const host = window.location.host
     if (!host) return
@@ -15,7 +13,7 @@
           return url.toString()
         }
       } catch {
-        // ignore malformed values
+        // Skip malformed URLs
       }
       return null
     }

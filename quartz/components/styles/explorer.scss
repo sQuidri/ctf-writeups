@@ -2,7 +2,7 @@
 
 @media all and ($mobile) {
   .page > #quartz-body {
-    // Shift page position when toggling Explorer on mobile.
+    // Slide layout when explorer drawer toggles on mobile
     & > :not(.sidebar.left:has(.explorer)) {
       transition: transform 300ms ease-in-out;
     }
@@ -11,7 +11,7 @@
       transition: transform 300ms ease-in-out;
     }
 
-    // Sticky top bar (stays in place when scrolling down on mobile).
+    // Sticky mobile header bar
     .sidebar.left:has(.explorer) {
       box-sizing: border-box;
       position: sticky;
