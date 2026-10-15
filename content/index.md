@@ -6,8 +6,9 @@ title: Archive
 
 ### [VarsityCTF](https://www.linkedin.com/feed/update/urn:li:activity:7505232162158317568/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3B822TJJfzSi%2BPlWh8uWaZ%2Fw%3D%3D)
 **Hosted by RMIT RISC, MonSec, MISC, DUCA & Swinburne Cyber Security Club**
-- **Placement:** **1st Place**
+- **Placement:** **1st Place** (*SIGSEGV*)
 - **Team:** [Sadiq](https://www.linkedin.com/in/sadiqmq), [Ibrahim](https://www.linkedin.com/in/ibrahim-hizamul-ansari-4809b226a/), [Liam](https://www.linkedin.com/in/liam-cahal-greer/) & [Tom](https://www.linkedin.com/in/twhlynch/)
+- **Domains:** Web Exploitation, OSINT, Forensics, Reverse Engineering
 
 ### [SRCTF 2026](SRCTF-2026/)
 **Co-hosted by SWITCH, CSIT & RISC @ RMIT University**
